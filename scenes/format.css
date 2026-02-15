@@ -1,9 +1,9 @@
 .scene {
-  display: none; /* Hide all scenes by default */
+  display: none;
 }
 
 .active {
-  display: block; /* Show active scene */
+  display: block;
 }
 
 .border {
@@ -52,12 +52,12 @@
 }
 
 .overlay {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5); /* semi-transparent dark background */
-  z-index: 1000;
+  background: rgba(0,0,0,0.50);
+  z-index: 9999;
 }
 
 #popUpImage {
@@ -134,13 +134,16 @@ body {
 
 p{
   margin-right: 5px;
-  margin-left: 5px
+  margin-left: 5px;
 }
 
 .dialogueBox {
+  margin-left: 5%;
+  margin-top: 3%;
+  width: 90%;
   display:none;
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .dialogueBG {
@@ -171,7 +174,7 @@ p{
   font-weight: bold;
   margin-top: 33%; 
   position: relative;
-  z-index: 3000;
+  z-index: 2;
   margin-left: 10%;
 }
 
@@ -181,8 +184,8 @@ p{
   font-size: 25px;
   margin-top: 3%; 
   line-height: 1.5;
-  position: relative; /* Remove absolute positioning */
-  z-index: 3000;
+  position: relative;
+  z-index: 2;
   margin-left: 10%;
   font-family: "Cabin Sketch", sans-serif;
   font-weight: 400;
@@ -199,9 +202,137 @@ p{
   color: rgb(82, 37, 37);
   font-size: 25px;
 }
+
+#choiceBox {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
 #insightBox{
   display:none; 
   margin-top:20px; 
   border:1px solid #ccc; 
   padding:10px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 200px;
+}
+
+.popupBox {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 80%;
+    max-width: 550px;
+    max-height: 75vh;
+    border-radius: 15px;
+    padding: 20px;
+    z-index: 10;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.popupBox.show {
+    display: flex;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popupContent {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Chat area */
+.chatMessages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* Chat message */
+.chatMessage {
+    display: flex;
+    align-items: flex-end;
+    max-width: 80%;
+}
+
+/* Player message */
+.playerMessage {
+    justify-content: flex-end;
+}
+
+.playerMessage .bubble {
+    background: #ffffff;
+    color: black;
+    border-radius: 15px 15px 0 15px;
+}
+
+/* AI message */
+.aiMessage {
+    justify-content: flex-start;
+}
+
+.aiMessage .bubble {
+    background: #ffb6c1;
+    color: black;
+    border-radius: 15px 15px 15px 0;
+}
+
+.bubble {
+    padding: 10px 15px;
+    max-width: 250px;
+    word-wrap: break-word;
+}
+
+/* Avatar */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+
+/* Input */
+.chatInputContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.aiInput {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Close button */
+.closeBtn {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e1a4a4;
+}
+
+.closeBtn:hover {
+    background-color: #b76f6f;
+    color: white;
 }
