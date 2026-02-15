@@ -1,0 +1,114 @@
+<html>
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="format.css">
+<script src= "mainMenu.js" defer> </script>
+
+<title>Dating Sim</title>
+</head>
+<body style = "background-image: url('../image/homeScreen.png');">
+
+
+<div id = "menuScene" class = "scene active" >
+    
+    <div class = "border1">
+        <h1>Date to Say</h1>
+    </div>
+
+    <div class = "box">
+        <p>A choose-your-own-adventure game over the course of a day. Pick up the broken pieces left after a bad breakup.</p>
+    </div>
+    
+    <div class = "box">
+        <button class="button button1" data-scene="optionScene"> Single Player </button>
+    </div>
+</div>
+
+<div id = "optionScene" class = "scene">
+   
+    <div class = "border1 border2">
+    <h1> Describe yourself </h1>
+    </div>
+
+    <div class = "box">
+        <p><strong>Enter Your Name:</strong></p>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+    </div>
+
+    <div class = "box">
+        <p><strong>Your Date of Birth:</strong></p>
+        <input type="date" id="dobInput"><br>
+    </div>
+
+    <div class = "box">   
+        <p><strong>Your Hobby:</strong></p> <br>
+        <label><input type="radio" name="hobby" value="Reading"> Reading</label><br>
+        <label><input type="radio" name="hobby" value="Gaming"> Gaming</label><br>
+        <label><input type="radio" name="hobby" value="Sports"> Sports</label><br>
+        <label><input type="radio" name="hobby" value="Music"> Music</label><br>
+    </div>        
+    
+    <div class = "box">
+        <p><strong>Your Habits:</strong></p>
+        <label><input type="checkbox" name="habit" value="Early Riser"> Early Riser</label><br>
+        <label><input type="checkbox" name="habit" value="Night Owl"> Night Owl</label><br>
+        <label><input type="checkbox" name="habit" value="Exercise Regularly"> Exercise Regularly</label><br>
+        <label><input type="checkbox" name="habit" value="Coffee Lover"> Coffee Lover</label><br>
+    </div> 
+
+    <div class = "box">
+        <button id = "gameStart" class="button button1" > Game Start</button>
+        <div id = "output"></div>
+    </div>
+    
+</div>
+
+<div id = "blackScene" class = "scene">
+    <div class = "box boxcenter">
+        <button class="button button1" data-scene="bedScene"> Wake Up </button>
+    </div>
+</div>
+
+<div id = "bedScene" class = "scene">
+    <div id = "dialogueBox" class = "dialogueBox">
+        <img src = "../image/blackTextBox.png" class = "dialogueBG">
+        <div class = "dialogueContent">
+            <div class="characterName"></div>
+            <div class="dialogueText"></div>
+        </div>
+    </div>
+</div>
+
+<div id = "parkScene" class = "scene">
+    <div id = "dialogueBox" class = "dialogueBox">
+        <img src = "../image/blackTextBox.png" class = "dialogueBG">
+        <div class = "dialogueContent">
+            <div class="characterName"></div>
+            <div class="dialogueText"></div>
+        </div>
+    </div>
+</div>
+
+<div id="choiceBox" style="display:none;"></div>
+
+<div id="overlay" class="overlay" style="display:none;">
+    
+  <img id="popUpImage" src="../image/coffeeMugUnpressed.png">
+</div>
+
+
+<div id="finalScreen" class="scene">
+    <div class="box boxcenter">
+        <button class="button button 2" data-scene="finalScreen"> Insight </button><br>
+        <button class="button button 3" data-scene="finalScreen"> ASK AI</button>
+    </div>
+    <div id="insightBox"></div>
+</div>
+</body>
+
+</html>
